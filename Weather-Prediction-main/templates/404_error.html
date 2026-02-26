@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>404 ERROR</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/error_css.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="page_404">
+    <div class="container">
+      <div class="four_zero_four_bg">
+        <h1 class="text-center">404</h1>
+      </div>
+      <div class="contant_box_404">
+        {% if error_message %}
+          <p style="color: red; font-weight: bold;">API says: {{ error_message }}</p>
+        {% endif %}
+        <h3>Enter your Location Name Correctly</h3>
+        <p>Or, the location you are looking for is not available in the API!</p>
+        <a href="{{ url_for('home') }}" class="link_404">Go to Home</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
